@@ -20,7 +20,7 @@ public class Person {
     }
     /**
      * Get the name of this person
-     * @return the first name of this person
+     * @return the name of this person
      */
     public String getName() {
         return this.lastName + " " + this.firstName;
