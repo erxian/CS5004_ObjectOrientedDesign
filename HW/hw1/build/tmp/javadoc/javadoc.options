@@ -1,0 +1,8 @@
+-classpath '/Users/evelynhsu/CS5004/Zengping_Xu_repository/HW/hw1/build/classes/java/main:/Users/evelynhsu/CS5004/Zengping_Xu_repository/HW/hw1/build/resources/main'
+-d '/Users/evelynhsu/CS5004/Zengping_Xu_repository/HW/hw1/build/docs/javadoc'
+-doctitle 'hw1 1.0-SNAPSHOT API'
+-notimestamp 
+-quiet 
+-windowtitle 'hw1 1.0-SNAPSHOT API'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/HW/hw1/src/main/java/problem1/Owner.java'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/HW/hw1/src/main/java/problem1/Vehicle.java'
