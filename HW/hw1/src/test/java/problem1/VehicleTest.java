@@ -47,5 +47,8 @@ public class VehicleTest {
         vehicle.setOwner(new Owner("wane", "bruce", "1234567890"));
         assertEquals(vehicle.getOwner().getName(), "bruce wane");
         assertEquals(vehicle.getOwner().getPhoneNum(), "1234567890");
+        vehicle.setOwner(new Owner("jimmy", "cho", "66789"));
+        assertEquals(vehicle.getOwner().getName(), "cho jimmy");
+        assertEquals(vehicle.getOwner().getPhoneNum(), "0");
     }
 }

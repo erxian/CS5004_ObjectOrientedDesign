@@ -1,6 +1,5 @@
 package problem1;
 
-
 /**
  *  CS 5004 Spring 2021
  *  Zengping Xu
@@ -21,9 +20,14 @@ public class Owner {
      * @param phoneNum - phone number of the Owner object.
      */
     public Owner(String firstName, String lastName, String phoneNum){
+        int charValid = 10;
         this.firstName = firstName;
         this.lastName = lastName;
-        validatePhone(phoneNum);
+        if (phoneNum.length() == charValid) {
+            this.phoneNum = phoneNum;
+        } else {
+            this.phoneNum = "0";
+        }
     }
     /**
      * Returns the name of the Owner.
@@ -38,18 +42,5 @@ public class Owner {
      */
     public String getPhoneNum() {
         return this.phoneNum;
-    }
-    /**
-     * @param phoneNum - owner's phone number
-     * validate whether phone number equals to 10 characters
-     * if valid, set phoneNum to Owner, if not, raise Exception
-     */
-    public void validatePhone(String phoneNum) {
-        int charLen = 10;
-        if (phoneNum.length() == charLen) {
-            this.phoneNum = phoneNum;
-        } else {
-            this.phoneNum = "Invalid Phone Number";
-        }
     }
 }

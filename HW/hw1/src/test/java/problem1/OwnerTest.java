@@ -25,12 +25,6 @@ public class OwnerTest {
     @Test
     public void getPhoneNum() {
         assertEquals(evelyn.getPhoneNum(), "8781498988");
-        assertEquals(michel.getPhoneNum(), "Invalid Phone Number");
-    }
-
-    @Test
-    public void validatePhone() {
-        evelyn.validatePhone("1122334455");
-        evelyn.validatePhone("10001");
+        assertEquals(michel.getPhoneNum(), "0");
     }
 }
