@@ -6,3 +6,9 @@ problem2/Time.java
  problem2.Time
 problem2/Trip.java
  problem2.Trip
+problem3/Person.java
+ problem3.Person
+problem3/Amount.java
+ problem3.Amount
+problem3/Account.java
+ problem3.Account

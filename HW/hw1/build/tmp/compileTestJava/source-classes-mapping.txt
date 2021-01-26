@@ -6,3 +6,9 @@ problem2/TimeTest.java
  problem2.TimeTest
 problem1/VehicleTest.java
  problem1.VehicleTest
+problem3/PersonTest.java
+ problem3.PersonTest
+problem3/AccountTest.java
+ problem3.AccountTest
+problem3/AmountTest.java
+ problem3.AmountTest

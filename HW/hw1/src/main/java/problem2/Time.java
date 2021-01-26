@@ -86,5 +86,4 @@ public class Time {
             this.second = second;
         }
     }
-
 }
