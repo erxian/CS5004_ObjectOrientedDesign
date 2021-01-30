@@ -1,0 +1,11 @@
+-classpath '/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/build/classes/java/main:/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/build/resources/main'
+-d '/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/build/docs/javadoc'
+-doctitle 'newLab2 1.0-SNAPSHOT API'
+-notimestamp 
+-quiet 
+-windowtitle 'newLab2 1.0-SNAPSHOT API'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/src/main/java/problem1/Author.java'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/src/main/java/problem2/Athlete.java'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/src/main/java/problem2/Runner.java'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/src/main/java/problem2/BaseballPlayer.java'
+'/Users/evelynhsu/CS5004/Zengping_Xu_repository/Lab/lab2/src/main/java/problem2/Name.java'
