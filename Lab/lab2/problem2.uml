@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>problem2</OriginalElement>
+  <nodes>
+    <node x="439.5" y="220.0">problem2.AthleteTest</node>
+    <node x="259.5" y="220.0">problem2.BaseballPlayer</node>
+    <node x="378.43528693528697" y="300.0">problem2.BaseballPlayerTest</node>
+    <node x="289.882967032967" y="130.0">problem2.Athlete</node>
+    <node x="77.61630036630032" y="300.0">problem2.RunnerTest</node>
+    <node x="300.41666666666663" y="0.0">problem2.Name</node>
+    <node x="10.5" y="130.0">problem2.NameTest</node>
+    <node x="143.49999999999997" y="220.0">problem2.Runner</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="problem2.BaseballPlayer" target="problem2.Athlete">
+      <point x="0.0" y="-15.0" />
+      <point x="339.5" y="200.0" />
+      <point x="333.2163003663003" y="200.0" />
+      <point x="-8.666666666666686" y="15.0" />
+    </edge>
+    <edge source="problem2.Runner" target="problem2.Athlete">
+      <point x="0.0" y="-15.0" />
+      <point x="191.49999999999997" y="190.0" />
+      <point x="298.54963369963366" y="190.0" />
+      <point x="-43.333333333333314" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="293.0" y="165.0" />
+  <SelectedNodes>
+    <node>problem2.AthleteTest</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
