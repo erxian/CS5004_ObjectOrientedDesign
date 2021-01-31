@@ -8,3 +8,7 @@ problem2/NameTest.java
  problem2.NameTest
 problem2/BaseballPlayerTest.java
  problem2.BaseballPlayerTest
+problem3/AuthorTest.java
+ problem3.AuthorTest
+problem3/PosnTest.java
+ problem3.PosnTest

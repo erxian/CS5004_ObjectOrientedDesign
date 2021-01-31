@@ -8,3 +8,7 @@ problem1/Author.java
  problem1.Author
 problem2/BaseballPlayer.java
  problem2.BaseballPlayer
+problem3/Posn.java
+ problem3.Posn
+problem3/Author.java
+ problem3.Author
