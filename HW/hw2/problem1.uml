@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>problem1</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">problem1.UnavailableException</node>
+    <node x="251.25" y="270.0">problem1.DoubleRoomTest</node>
+    <node x="431.25" y="270.0">problem1.SingleRoomTest</node>
+    <node x="100.40000000000003" y="190.0">problem1.RoomTest</node>
+    <node x="228.0" y="0.0">problem1.InvalidGuestNumException</node>
+    <node x="447.25" y="190.0">problem1.SingleRoom</node>
+    <node x="267.25" y="190.0">problem1.DoubleRoom</node>
+    <node x="323.25" y="80.0">problem1.Room</node>
+    <node x="611.25" y="270.0">problem1.FamilyRoomTest</node>
+    <node x="627.25" y="190.0">problem1.FamilyRoom</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="problem1.Room" target="problem1.InvalidGuestNumException">
+      <point x="20.0" y="-15.0" />
+      <point x="383.25" y="60.0" />
+      <point x="408.0" y="60.0" />
+      <point x="60.0" y="15.0" />
+    </edge>
+    <edge source="problem1.RoomTest" target="problem1.InvalidGuestNumException">
+      <point x="-22.400000000000006" y="-15.0" />
+      <point x="134.00000000000003" y="130.0" />
+      <point x="258.77037037037036" y="130.0" />
+      <point x="258.77037037037036" y="60.0" />
+      <point x="288.0" y="60.0" />
+      <point x="-60.0" y="15.0" />
+    </edge>
+    <edge source="problem1.Room" target="problem1.UnavailableException">
+      <point x="-20.0" y="-15.0" />
+      <point x="343.25" y="50.0" />
+      <point x="156.0" y="50.0" />
+      <point x="52.0" y="15.0" />
+    </edge>
+    <edge source="problem1.FamilyRoom" target="problem1.Room">
+      <point x="32.0" y="-15.0" />
+      <point x="723.25" y="140.0" />
+      <point x="398.80555555555554" y="140.0" />
+      <point x="35.55555555555554" y="15.0" />
+    </edge>
+    <edge source="problem1.FamilyRoomTest" target="problem1.FamilyRoom">
+      <point x="-40.0" y="-15.0" />
+      <point x="651.25" y="245.0" />
+      <point x="659.25" y="245.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="problem1.RoomTest" target="problem1.Room">
+      <point x="0.0" y="-15.0" />
+      <point x="156.40000000000003" y="140.0" />
+      <point x="327.69444444444446" y="140.0" />
+      <point x="-35.55555555555554" y="15.0" />
+    </edge>
+    <edge source="problem1.SingleRoomTest" target="problem1.SingleRoom">
+      <point x="-40.0" y="-15.0" />
+      <point x="471.25" y="245.0" />
+      <point x="479.25" y="245.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="problem1.SingleRoom" target="problem1.Room">
+      <point x="-32.0" y="-15.0" />
+      <point x="479.25" y="170.0" />
+      <point x="372.1388888888889" y="170.0" />
+      <point x="8.888888888888914" y="15.0" />
+    </edge>
+    <edge source="problem1.RoomTest" target="problem1.UnavailableException">
+      <point x="-44.80000000000001" y="-15.0" />
+      <point x="111.60000000000002" y="170.0" />
+      <point x="52.00000000000006" y="170.0" />
+      <point x="-52.0" y="15.0" />
+    </edge>
+    <edge source="problem1.DoubleRoomTest" target="problem1.DoubleRoom">
+      <point x="-40.0" y="-15.0" />
+      <point x="291.25" y="245.0" />
+      <point x="299.25" y="245.0" />
+      <point x="-32.0" y="15.0" />
+    </edge>
+    <edge source="problem1.DoubleRoom" target="problem1.Room">
+      <point x="32.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.1" x="517.5" y="149.99999999999997" />
+  <SelectedNodes>
+    <node>problem1.UnavailableException</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
