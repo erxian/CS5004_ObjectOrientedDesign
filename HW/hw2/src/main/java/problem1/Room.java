@@ -20,18 +20,13 @@ public class Room {
    */
   public Room(int maxOccupancy, float price, int guestNum) {
     this.maxOccupancy = maxOccupancy;
-    if (this.IsValidPrice(price)) {
-      this.price = price;
-    } else {
-      throw new IllegalArgumentException("Price must be greater than 0");
-    }
 
-    if (this.validateDefault(guestNum)) {
-      this.guestNum = guestNum;
-    } else {
-      throw new IllegalArgumentException("guest number must be 0");
+    this.IsValidPrice(price);
+    this.price = price;
+
+    this.validateDefault(guestNum);
+    this.guestNum = guestNum;
     }
-  }
 
   /**
    * Gets the maximum number of people that can stay in the room
@@ -60,10 +55,24 @@ public class Room {
     this.guestNum = guestNum;
   }
 
-  private boolean validateDefault(int guestNum) {
+  /**
+   * Checks the room price when create a new room, should be greater than 0.
+   * @param price The cost of a single night’s stay
+   */
+  private void IsValidPrice(float price) {
+    int MIN_PRICE = 0;
+    if (price <= MIN_PRICE)
+      throw new IllegalArgumentException("Price must be greater than 0");
+  }
+
+  /**
+   * Checks if the guests number is 0
+   * @param guestNum The number of guests currently booked into the room.
+   * This value should be 0 when the room is first created in the system
+   */
+  private void validateDefault(int guestNum) {
     if (guestNum != DEFAULT_NUM)
-      return false;
-    return true;
+      throw new IllegalArgumentException("guest number must be 0");
   }
 
   /**
@@ -72,22 +81,9 @@ public class Room {
    * or greater than maxOccupancy
    * @param guestNum The number of guests book the room
    */
-  private boolean isValidateGuestNum(int guestNum) throws InvalidGuestNumException {
+  private void isValidateGuestNum(int guestNum) throws InvalidGuestNumException {
     if (guestNum <= DEFAULT_NUM || guestNum > this.getMaxOccupancy())
       throw new InvalidGuestNumException();
-    return true;
-  }
-
-  /**
-   * Checks the room price when create a new room, should be greater than 0.
-   *
-   * @param price The cost of a single night’s stay
-   */
-  private boolean IsValidPrice(float price) {
-    int MIN_PRICE = 0;
-    if (price <= MIN_PRICE)
-      return false;
-    return true;
   }
 
   /**
