@@ -5,7 +5,7 @@ package problem1;
  */
 public class Room {
 
-  private static int DEFAULT_NUM = 0;
+  private static int defaultNum = 0;
   private int maxOccupancy;
   private float price;
   private int guestNum;
@@ -21,7 +21,7 @@ public class Room {
   public Room(int maxOccupancy, float price, int guestNum) {
     this.maxOccupancy = maxOccupancy;
 
-    this.IsValidPrice(price);
+    this.isValidPrice(price);
     this.price = price;
 
     this.validateDefault(guestNum);
@@ -59,9 +59,9 @@ public class Room {
    * Checks the room price when create a new room, should be greater than 0.
    * @param price The cost of a single night’s stay
    */
-  private void IsValidPrice(float price) {
-    int MIN_PRICE = 0;
-    if (price <= MIN_PRICE)
+  private void isValidPrice(float price) {
+    int minPrice = 0;
+    if (price <= minPrice)
       throw new IllegalArgumentException("Price must be greater than 0");
   }
 
@@ -71,7 +71,7 @@ public class Room {
    * This value should be 0 when the room is first created in the system
    */
   private void validateDefault(int guestNum) {
-    if (guestNum != DEFAULT_NUM)
+    if (guestNum != defaultNum)
       throw new IllegalArgumentException("guest number must be 0");
   }
 
@@ -82,7 +82,7 @@ public class Room {
    * @param guestNum The number of guests book the room
    */
   private void isValidateGuestNum(int guestNum) throws InvalidGuestNumException {
-    if (guestNum <= DEFAULT_NUM || guestNum > this.getMaxOccupancy())
+    if (guestNum <= defaultNum || guestNum > this.getMaxOccupancy())
       throw new InvalidGuestNumException();
   }
 
@@ -93,7 +93,7 @@ public class Room {
    * @return true if the room is available, false otherwise.
    */
   public boolean isAvailable() throws UnavailableException {
-    if (this.getGuestNum() > DEFAULT_NUM)
+    if (this.getGuestNum() > defaultNum)
       throw new UnavailableException();
     return true;
   }
