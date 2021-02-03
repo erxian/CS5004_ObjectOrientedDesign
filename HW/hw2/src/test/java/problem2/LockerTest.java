@@ -49,9 +49,25 @@ public class LockerTest {
   }
 
   @Test (expected = InvalidDimensionException.class)
-  public void invalidDimension() throws LockerOccupiedException, InvalidDimensionException {
+  public void invalidWidthDimension() throws LockerOccupiedException, InvalidDimensionException {
     Recipient tom = new Recipient("tom","xu", "tom.xu@gmail.com");
-    MailItem laptop = new MailItem(35, 20, 20, tom);
+    MailItem laptop = new MailItem(40, 20, 20, tom);
+    awsHub.addMail(laptop);
+    assertEquals(null, awsHub.getMail());
+  }
+
+  @Test (expected = InvalidDimensionException.class)
+  public void invalidHeightDimension() throws LockerOccupiedException, InvalidDimensionException {
+    Recipient tom = new Recipient("tom","xu", "tom.xu@gmail.com");
+    MailItem laptop = new MailItem(20, 45, 20, tom);
+    awsHub.addMail(laptop);
+    assertEquals(null, awsHub.getMail());
+  }
+
+  @Test (expected = InvalidDimensionException.class)
+  public void invalidDepthDimension() throws LockerOccupiedException, InvalidDimensionException {
+    Recipient tom = new Recipient("tom","xu", "tom.xu@gmail.com");
+    MailItem laptop = new MailItem(20, 20, 50, tom);
     awsHub.addMail(laptop);
     assertEquals(null, awsHub.getMail());
   }

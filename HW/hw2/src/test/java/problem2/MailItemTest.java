@@ -41,10 +41,34 @@ public class MailItemTest {
 
   @Test
   public void getRecipient() {
+    assertFalse(dhlMail.getRecipient().equals(null));
+  }
+
+  @Test
+  public void equals() {
     assertTrue(new Recipient(
         "lily","wang", "lily.wang@gmail.com"
     ).equals(dhlMail.getRecipient()));
+  }
 
-    assertFalse(dhlMail.getRecipient().equals(null));
+  @Test
+  public void firstNameNotEqual() {
+    assertFalse(new Recipient(
+        "bb","wang", "lily.wang@gmail.com"
+    ).equals(dhlMail.getRecipient()));
+  }
+
+  @Test
+  public void lastNameNotEqual() {
+    assertFalse(new Recipient(
+        "lily","zhang", "lily.wang@gmail.com"
+    ).equals(dhlMail.getRecipient()));
+  }
+
+  @Test
+  public void addressNameNotEqual() {
+    assertFalse(new Recipient(
+        "lily","wang", "l.wang@gmail.com"
+    ).equals(dhlMail.getRecipient()));
   }
 }
