@@ -40,15 +40,15 @@ public class MailItemTest {
   }
 
   @Test
-  public void getRecipient() {
-    assertFalse(dhlMail.getRecipient().equals(null));
-  }
-
-  @Test
-  public void equals() {
+  public void testEquals() {
     assertTrue(new Recipient(
         "lily","wang", "lily.wang@gmail.com"
     ).equals(dhlMail.getRecipient()));
+  }
+
+  @Test
+  public void getRecipient() {
+    assertFalse(dhlMail.getRecipient().equals(dhlMail));
   }
 
   @Test
@@ -70,5 +70,11 @@ public class MailItemTest {
     assertFalse(new Recipient(
         "lily","wang", "l.wang@gmail.com"
     ).equals(dhlMail.getRecipient()));
+  }
+
+  @Test
+  public void testHashCode() {
+    Recipient someone = new Recipient("lily","wang", "lily.wang@gmail.com");
+    assertTrue(dhlMail.getRecipient().hashCode() == someone.hashCode());
   }
 }

@@ -58,4 +58,12 @@ public class Recipient {
         Objects.equals(getLastName(), recipient.getLastName()) &&
         Objects.equals(getAddress(), recipient.getAddress());
   }
+
+  @Override
+  /**
+   * rewrite hashCode to compare two recipient object
+   */
+  public int hashCode() {
+    return Objects.hash(getFirstName(), getLastName(), getAddress());
+  }
 }
