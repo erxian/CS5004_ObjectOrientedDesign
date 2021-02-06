@@ -13,4 +13,12 @@ public class FoodOderSystem {
   public FoodOderSystem(FoodItem[] foodItemList) {
     this.foodItemList = foodItemList;
   }
+
+  /**
+   * Return the food list
+   * @return the food list
+   */
+  public FoodItem[] getFoodItemList() {
+    return this.foodItemList;
+  }
 }
