@@ -1,7 +1,7 @@
 package problem1;
 
 public class Plumbing extends AbstractSpecialist {
-  private static Integer  permittingFee  = 20;
+  static private Integer  permittingFee  = 20;
   /**
    * Constructor for the Plumbing class.
    *

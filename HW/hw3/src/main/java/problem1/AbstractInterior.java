@@ -35,7 +35,7 @@ public abstract class AbstractInterior extends AbstractNonSpecialist {
    * @param petsNum the pets number
    * @return the pets fee (a rate)
    */
-  public double calculatePetsFee(Integer petsNum) {
+  private double calculatePetsFee(Integer petsNum) {
     int minNum = 0;
     int mediumNum = 3;
     double lowRate = 0.05;

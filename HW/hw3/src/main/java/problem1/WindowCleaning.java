@@ -47,7 +47,7 @@ public class WindowCleaning extends AbstractExterior {
    * @param floorNum The number of floors the property has
    * @return The floor rate
    */
-  public double calculateFloorFee(Integer floorNum) {
+  private double calculateFloorFee(Integer floorNum) {
     int noFeeFloorNum = 1;
     double floorRate = 0.05;
     if (floorNum > noFeeFloorNum) {

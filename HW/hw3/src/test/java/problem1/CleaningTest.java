@@ -21,12 +21,6 @@ public class CleaningTest {
   }
 
   @Test
-  public void getPetsFee() {
-    assertEquals(0.05, sophieHouse.calculatePetsFee(sophieHouse.getPetsNum()), 0.00);
-    assertEquals(0.07, evelyn.calculatePetsFee(evelyn.getPetsNum()), 0.0);
-  }
-
-  @Test
   public void getSmallServiceHour() {
     assertEquals(1, tomHouse.getServiceHour(tomHouse.propertySize), 0);
   }

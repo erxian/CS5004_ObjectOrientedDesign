@@ -7,7 +7,7 @@ import java.util.Objects;
  * non specialist service calculate price methods.
  */
 public abstract class AbstractNonSpecialist extends AbstractPropertyService implements PropertyService {
-  private static Integer baseRate = 80;
+  static private Integer baseRate = 80;
   /**
    * Constructor for the AbstractNonSpecialist class.
    *

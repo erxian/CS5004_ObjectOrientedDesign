@@ -3,7 +3,7 @@ package problem1;
 import java.util.Objects;
 
 public abstract class AbstractSpecialist extends AbstractPropertyService implements PropertyService {
-  private static Integer baseRate = 200;
+  static private Integer baseRate = 200;
   private boolean isComplex;
   private Integer licensedEmployeeNum;
   /**

@@ -1,7 +1,7 @@
 package problem1;
 
 public class Gardening extends AbstractExterior {
-  private static double removalFee = 20;
+  static private double removalFee = 20;
   /**
    * Constructor for the Gardening class.
    *

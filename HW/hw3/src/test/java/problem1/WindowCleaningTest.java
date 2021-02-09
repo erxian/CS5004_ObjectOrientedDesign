@@ -29,12 +29,6 @@ public class WindowCleaningTest {
   }
 
   @Test
-  public void calculateFloorFee() {
-    assertEquals(0, oneFloor.calculateFloorFee(oneFloor.getFloorNum()), 0.0);
-    assertEquals(0.05, threeFloor.calculateFloorFee(threeFloor.getFloorNum()), 0.01);
-  }
-
-  @Test
   public void calculatePrice() {
     assertEquals(160, oneFloor.calculatePrice(), 0.0);
     assertEquals(302.4, threeFloor.calculatePrice(), 0.01);

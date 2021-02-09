@@ -3,7 +3,7 @@ package problem1;
 import java.util.Objects;
 
 public class Electrical extends AbstractSpecialist {
-  private static Integer  permittingFee  = 50;
+  static private Integer  permittingFee  = 50;
   /**
    * Constructor for the AbstractPropertyService class.
    *
