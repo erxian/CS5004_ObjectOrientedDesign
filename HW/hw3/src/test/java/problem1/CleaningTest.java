@@ -55,4 +55,25 @@ public class CleaningTest {
     assertEquals(72, tomHouse.calculatePrice(), 0.0);
   }
 
+  @Test
+  public void testEquals() throws InvalidPropertyServiceException {
+    Cleaning copy = new Cleaning("No.10011", PropertySize.MEDIUM, false,
+        7, 1);
+    assertTrue(sophieHouse.equals(copy));
+  }
+
+  @Test
+  public void testHashCode() throws InvalidPropertyServiceException {
+    Cleaning copy = new Cleaning("No.10011", PropertySize.MEDIUM, false,
+        7, 1);
+    assertTrue(sophieHouse.hashCode() == copy.hashCode());
+  }
+
+  @Test
+  public void testToString() {
+    String expected = "Specialist service info are {Address: No.10011, Property Size: MEDIUM"
+        + ", isMonthly: false, preServiceNum: 7, petsNum: 1}";
+    assertEquals(expected, sophieHouse.toString());
+  }
+
 }

@@ -1,5 +1,7 @@
 package problem1;
 
+import java.util.Objects;
+
 /**
  * An Abstract class representing the shared fields and behavior of
  * non specialist service calculate price methods.
@@ -69,4 +71,33 @@ public abstract class AbstractNonSpecialist extends AbstractPropertyService impl
     }
     return basicPrice;
   }
+
+  /**
+   * check if two AbstractNonSpecialist object are equal
+   *
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    return super.equals(o);
+  }
+
+  /**
+   * Return the hashCode of AbstractNonSpecialist object
+   * @return the hashCode of AbstractNonSpecialist object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  /**
+   * Return the whole information about an NonSpecialist service
+   * @return the whole information about an NonSpecialist service
+   */
+  @Override
+  public String toString() {
+    return super.toString();
+  }
+
 }

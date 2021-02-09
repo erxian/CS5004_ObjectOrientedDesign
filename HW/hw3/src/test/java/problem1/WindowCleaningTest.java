@@ -39,4 +39,41 @@ public class WindowCleaningTest {
     assertEquals(160, oneFloor.calculatePrice(), 0.0);
     assertEquals(302.4, threeFloor.calculatePrice(), 0.01);
   }
+
+  @Test
+  public void testEquals() throws InvalidPropertyServiceException {
+    WindowCleaning copy = new WindowCleaning("No.668", PropertySize.MEDIUM, false,
+        5, 1);
+    assertTrue(oneFloor.equals(copy));
+  }
+
+  @Test
+  public void testNotEquals() throws InvalidPropertyServiceException {
+    WindowCleaning copy = new WindowCleaning("No.668", PropertySize.MEDIUM, false,
+        5, 2);
+    assertFalse(oneFloor.equals(copy));
+  }
+
+  @Test
+  public void testEqualsFloor() throws InvalidPropertyServiceException {
+    WindowCleaning copy = new WindowCleaning("No.555", PropertySize.SMALL, true,
+        4, 1);
+    assertFalse(oneFloor.equals(copy));
+  }
+
+
+  @Test
+  public void testHashCode() throws InvalidPropertyServiceException {
+    WindowCleaning copy = new WindowCleaning("No.668", PropertySize.MEDIUM, false,
+        5, 1);
+    assertTrue(oneFloor.hashCode() == copy.hashCode());
+  }
+
+  @Test
+  public void testToString() {
+    String expected = "Specialist service info are {Address: No.668, Property Size: MEDIUM"
+        + ", isMonthly: false, preServiceNum: 5, floorNum: 1}";
+    assertEquals(expected, oneFloor.toString());
+  }
+
 }

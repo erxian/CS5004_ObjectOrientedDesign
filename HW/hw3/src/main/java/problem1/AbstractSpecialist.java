@@ -1,5 +1,7 @@
 package problem1;
 
+import java.util.Objects;
+
 public abstract class AbstractSpecialist extends AbstractPropertyService implements PropertyService {
   private static Integer baseRate = 200;
   private boolean isComplex;
@@ -75,5 +77,40 @@ public abstract class AbstractSpecialist extends AbstractPropertyService impleme
   @Override
   public double calculatePrice() {
     return this.licensedEmployeeNum * baseRate;
+  }
+
+
+  /**
+   * check if two AbstractSpecialist object are equal
+   *
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    AbstractSpecialist abstractSpecialist = (AbstractSpecialist) o;
+    return super.equals(o) && Objects.equals(isComplex(), abstractSpecialist.isComplex()) &&
+        Objects.equals(getLicensedEmployeeNum(), abstractSpecialist.getLicensedEmployeeNum());
+  }
+
+  /**
+   * Return the hashCode of AbstractSpecialist object
+   *
+   * @return the hashCode of AbstractSpecialist object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode() + Objects.hash(isComplex(), getLicensedEmployeeNum());
+  }
+
+  /**
+   * Return the whole information about an Specialist service
+   * @return the whole information about an Specialist service
+   */
+  @Override
+  public String toString() {
+    return super.toString() +
+        ", isComplex: " + String.format("%b", this.isComplex()) +
+        ", licensedEmployeeNum: " + String.format("%d", this.getLicensedEmployeeNum()) +
+        "}";
   }
 }

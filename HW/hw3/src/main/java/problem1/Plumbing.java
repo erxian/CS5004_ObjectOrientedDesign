@@ -3,7 +3,7 @@ package problem1;
 public class Plumbing extends AbstractSpecialist {
   private static Integer  permittingFee  = 20;
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the Plumbing class.
    *
    * @param propertyAddress     The address of the property.
    * @param propertySize        The size of the property.
@@ -28,4 +28,34 @@ public class Plumbing extends AbstractSpecialist {
   public double calculatePrice() {
     return super.calculatePrice() + permittingFee;
   }
+
+  /**
+   * check if two Plumbing object are equal
+   *
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    return super.equals(o);
+  }
+
+  /**
+   * Return the hashCode of Plumbing object
+   *
+   * @return the hashCode of Plumbing object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  /**
+   * Return the whole information about an Plumbing service
+   * @return the whole information about an Plumbing service
+   */
+  @Override
+  public String toString() {
+    return super.toString();
+  }
+
 }

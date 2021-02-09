@@ -6,7 +6,7 @@ package problem1;
 public class Painting extends AbstractInterior {
 
   /**
-   * Constructor for the AbstractInterior class.
+   * Constructor for the Painting class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.
@@ -33,5 +33,35 @@ public class Painting extends AbstractInterior {
       default:
         return 16;
     }
+  }
+
+  /**
+   * check if two Painting object are equal
+   *
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    return super.equals(o);
+  }
+
+  /**
+   * Return the hashCode of Painting object
+   *
+   * @return the hashCode of Painting object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  /**
+   * Return the whole information about an Painting service
+   *
+   * @return the whole information about an Painting service
+   */
+  @Override
+  public String toString() {
+    return super.toString();
   }
 }

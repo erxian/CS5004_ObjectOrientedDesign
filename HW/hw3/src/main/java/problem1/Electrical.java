@@ -1,5 +1,7 @@
 package problem1;
 
+import java.util.Objects;
+
 public class Electrical extends AbstractSpecialist {
   private static Integer  permittingFee  = 50;
   /**
@@ -43,5 +45,32 @@ public class Electrical extends AbstractSpecialist {
   @Override
   public double calculatePrice() {
     return super.calculatePrice() + permittingFee;
+  }
+
+  /**
+   * check if two Electrical object are equal
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    return super.equals(o);
+  }
+
+  /**
+   * Return the hashCode of Electrical object
+   * @return the hashCode of Electrical object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  /**
+   * Return the whole information about an Electrical service
+   * @return the whole information about an Electrical service
+   */
+  @Override
+  public String toString() {
+    return super.toString();
   }
 }

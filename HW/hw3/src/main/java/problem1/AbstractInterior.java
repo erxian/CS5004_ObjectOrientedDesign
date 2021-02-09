@@ -1,5 +1,7 @@
 package problem1;
 
+import java.util.Objects;
+
 /**
  * A class representing AbstractInterior property service
  */
@@ -55,5 +57,38 @@ public abstract class AbstractInterior extends AbstractNonSpecialist {
   @Override
   public double calculatePrice() {
     return super.calculatePrice() * (1 + this.calculatePetsFee(petsNum));
+  }
+
+  /**
+   * check if two AbstractInterior object are equal
+   *
+   * @param o the hashCode of AbstractExterior object
+   */
+  @Override
+  public boolean equals(Object o) {
+    AbstractInterior abstractInterior = (AbstractInterior) o;
+    return super.equals(o) && Objects.equals(getPetsNum(), abstractInterior.getPetsNum());
+  }
+
+  /**
+   * Return the hashCode of AbstractInterior object
+   *
+   * @return the hashCode of AbstractInterior object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode() +  Objects.hash(getPetsNum());
+  }
+
+  /**
+   * Return the whole information about an Interior service
+   *
+   * @return the whole information about an Interior service
+   */
+  @Override
+  public String toString() {
+    return super.toString() +
+        ", petsNum: " + String.format("%d", this.getPetsNum()) +
+        "}";
   }
 }

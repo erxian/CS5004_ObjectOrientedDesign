@@ -1,10 +1,12 @@
 package problem1;
 
+import java.util.Objects;
+
 public class WindowCleaning extends AbstractExterior {
   private Integer floorNum;
 
   /**
-   * Constructor for the AbstractExterior class.
+   * Constructor for the WindowCleaning class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.
@@ -62,5 +64,38 @@ public class WindowCleaning extends AbstractExterior {
   @Override
   public double calculatePrice() {
     return super.calculatePrice() * (1 + this.calculateFloorFee(floorNum));
+  }
+
+  /**
+   * check if two WindowCleaning object are equal
+   *
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    WindowCleaning windowCleaning = (WindowCleaning) o;
+    return super.equals(o) && Objects.equals(getFloorNum(), windowCleaning.getFloorNum());
+  }
+
+  /**
+   * Return the hashCode of WindowCleaning object
+   *
+   * @return the hashCode of WindowCleaning object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode() + Objects.hash(getFloorNum());
+  }
+
+  /**
+   * Return the whole information about an WindowCleaning service
+   *
+   * @return the whole information about an WindowCleaning service
+   */
+  @Override
+  public String toString() {
+    return super.toString() +
+        ", floorNum: " + String.format("%d", this.getFloorNum()) +
+        "}";
   }
 }

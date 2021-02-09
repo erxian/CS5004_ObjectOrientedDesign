@@ -3,7 +3,7 @@ package problem1;
 public class Gardening extends AbstractExterior {
   private static double removalFee = 20;
   /**
-   * Constructor for the AbstractExterior class.
+   * Constructor for the Gardening class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.
@@ -23,5 +23,36 @@ public class Gardening extends AbstractExterior {
   @Override
   public double calculatePrice() {
     return super.calculatePrice() + removalFee;
+  }
+
+
+  /**
+   * check if two Gardening object are equal
+   *
+   * @param o the object waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    return super.equals(o);
+  }
+
+  /**
+   * Return the hashCode of Gardening object
+   *
+   * @return the hashCode of Gardening object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  /**
+   * Return the whole information about an Gardening service
+   *
+   * @return the whole information about an Gardening service
+   */
+  @Override
+  public String toString() {
+    return super.toString() + "}";
   }
 }

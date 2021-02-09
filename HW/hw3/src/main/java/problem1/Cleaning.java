@@ -18,4 +18,34 @@ public class Cleaning extends AbstractInterior {
       Integer preServiceNum, Integer petsNum) {
     super(propertyAddress, propertySize, isMonthly, preServiceNum, petsNum);
   }
+
+  /**
+   * check if two Cleaning object are equal
+   *
+   * @param o the objects waits to compare
+   */
+  @Override
+  public boolean equals(Object o) {
+    return super.equals(o);
+  }
+
+  /**
+   * Return the hashCode of Cleaning object
+   *
+   * @return the hashCode of Cleaning object
+   */
+  @Override
+  public int hashCode() {
+    return super.hashCode();
+  }
+
+  /**
+   * Return the whole information about an Cleaning service
+   *
+   * @return the whole information about an Cleaning service
+   */
+  @Override
+  public String toString() {
+    return super.toString();
+  }
 }

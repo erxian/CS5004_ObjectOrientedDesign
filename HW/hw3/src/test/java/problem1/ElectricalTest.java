@@ -1,6 +1,7 @@
 package problem1;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -67,4 +68,89 @@ public class ElectricalTest {
   public void calculatePrice() {
     assertEquals(650, fixLight.calculatePrice(), 0.0);
   }
+
+  @Test
+  public void testEqualsWithSelf() throws InvalidPropertyServiceException {
+    assertTrue(fixLight.equals(fixLight));
+  }
+
+  @Test
+  public void testEquals() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.MEDIUM, false,
+        6, true, 3);
+    assertTrue(fixLight.equals(copy));
+  }
+
+  @Test
+  public void testEqualsWithNull() throws InvalidPropertyServiceException {
+    assertFalse(fixLight.equals(null));
+  }
+
+  @Test
+  public void testEqualsWithOtherObject() throws InvalidPropertyServiceException {
+    Plumbing other = new Plumbing("No.778", PropertySize.MEDIUM, false,
+        6, true, 5);
+    assertFalse(fixLight.equals(other));
+  }
+
+  @Test
+  public void testEqualsWithDiffAddress() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.555", PropertySize.MEDIUM, true,
+        6, true, 3);
+    assertFalse(fixLight.equals(copy));
+  }
+
+  @Test
+  public void testEqualsWithDiffMonthly() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.MEDIUM, true,
+        6, true, 3);
+    assertFalse(fixLight.equals(copy));
+  }
+
+
+  @Test
+  public void testEqualsWithDiffIsComplex() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.MEDIUM, false,
+        6, false, 3);
+    assertFalse(fixLight.equals(copy));
+  }
+
+  @Test
+  public void testEqualsWithDiffLicensed() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.MEDIUM, false,
+        6, true, 2);
+    assertFalse(fixLight.equals(copy));
+  }
+
+  @Test
+  public void testEqualsWithDiffPreServiceNum() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.MEDIUM, false,
+        7, true, 3);
+    assertFalse(fixLight.equals(copy));
+  }
+
+
+  @Test
+  public void testEqualsWithDiffSize() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.SMALL, false,
+        6, true, 3);
+    assertFalse(fixLight.equals(copy));
+  }
+
+
+  @Test
+  public void testHashCode() throws InvalidPropertyServiceException {
+    Electrical copy = new Electrical("No.888", PropertySize.MEDIUM, false,
+        6, true, 3);
+    assertTrue(fixLight.hashCode() == copy.hashCode());
+
+  }
+
+  @Test
+  public void testToString() {
+    String expected = "Specialist service info are {Address: No.888, Property Size: MEDIUM"
+        + ", isMonthly: false, preServiceNum: 6, isComplex: true, licensedEmployeeNum: 3}";
+    assertEquals(expected, fixLight.toString());
+  }
+
 }
