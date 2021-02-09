@@ -1,10 +1,10 @@
 package problem1;
 
-public class WindowCleaning extends Exterior {
+public class WindowCleaning extends AbstractExterior {
   private Integer floorNum;
 
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractExterior class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.

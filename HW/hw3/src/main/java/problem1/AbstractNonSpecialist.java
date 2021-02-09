@@ -7,7 +7,7 @@ package problem1;
 public abstract class AbstractNonSpecialist extends AbstractPropertyService implements PropertyService {
   private static Integer baseRate = 80;
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractNonSpecialist class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.

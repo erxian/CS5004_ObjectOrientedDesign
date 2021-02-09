@@ -1,15 +1,15 @@
 package problem1;
 
-public class Exterior extends AbstractNonSpecialist {
+public abstract class AbstractExterior extends AbstractNonSpecialist {
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractExterior class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.
    * @param isMonthly       Whether or not the service is carried out monthly.
    * @param preServiceNum   The number of services previously carried out at the address.
    */
-  public Exterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
+  public AbstractExterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
       Integer preServiceNum) {
     super(propertyAddress, propertySize, isMonthly, preServiceNum);
   }

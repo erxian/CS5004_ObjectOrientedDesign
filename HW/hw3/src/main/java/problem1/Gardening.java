@@ -1,9 +1,9 @@
 package problem1;
 
-public class Gardening extends Exterior {
+public class Gardening extends AbstractExterior {
   private static double removalFee = 20;
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractExterior class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.

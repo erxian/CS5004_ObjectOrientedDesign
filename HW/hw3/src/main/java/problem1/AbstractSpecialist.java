@@ -5,7 +5,7 @@ public abstract class AbstractSpecialist extends AbstractPropertyService impleme
   private boolean isComplex;
   private Integer licensedEmployeeNum;
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractSpecialist class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.

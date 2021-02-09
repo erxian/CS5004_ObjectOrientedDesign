@@ -3,10 +3,10 @@ package problem1;
 /**
  * A class representing Painting interior property service
  */
-public class Painting extends Interior {
+public class Painting extends AbstractInterior {
 
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractInterior class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.

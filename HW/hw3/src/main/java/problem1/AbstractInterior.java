@@ -1,12 +1,12 @@
 package problem1;
 
 /**
- * A class representing Interior property service
+ * A class representing AbstractInterior property service
  */
-public class Interior extends AbstractNonSpecialist {
+public abstract class AbstractInterior extends AbstractNonSpecialist {
   private Integer petsNum;
   /**
-   * Constructor for the AbstractPropertyService class.
+   * Constructor for the AbstractInterior class.
    *
    * @param propertyAddress The address of the property.
    * @param propertySize    The size of the property.
@@ -14,7 +14,7 @@ public class Interior extends AbstractNonSpecialist {
    * @param preServiceNum   The number of services previously carried out at the address.
    * @param petsNum  The number of pets living at the address.
    */
-  public Interior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
+  public AbstractInterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
       Integer preServiceNum, Integer petsNum) {
     super(propertyAddress, propertySize, isMonthly, preServiceNum);
     this.petsNum = petsNum;
