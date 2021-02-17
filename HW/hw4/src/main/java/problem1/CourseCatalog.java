@@ -54,9 +54,9 @@ public class CourseCatalog implements ICourseCatalog {
       throw new CourseNotFoundException("Course Not Found");
     Node currNode = this.head;
     Node preNode = currNode;
-    int i = 0;
+    //int i = 0;
     while (!currNode.getCourse().equals(course)) {
-      i++;
+      //i++;
       preNode = currNode;
       currNode = currNode.getNextNode();
     }
