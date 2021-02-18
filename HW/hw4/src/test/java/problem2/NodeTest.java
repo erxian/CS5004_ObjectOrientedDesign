@@ -33,23 +33,19 @@ public class NodeTest {
   }
 
   @Test
-  public void testItemNotEquals() {
-    Node some = new Node(20, node3);
-    assertFalse(node2.equals(some));
-  }
-
-  @Test
   public void testNextNotEquals() {
-    Node some = new Node(5, node3);
+    Node some3 = new Node(15, null);
+    Node some2 = new Node(22, some3);
+    Node some = new Node(5, some2);
     assertFalse(node1.equals(some));
   }
 
-  @Test
-  public void testAllNotEquals() {
-    Node some = new Node(72, node3);
-    assertFalse(some.equals(node3));
-  }
 
+  @Test
+  public void testAllEquals() {
+    Node some = new Node(5, null);
+    assertTrue(node1.equals(some));
+  }
 
   @Test
   public void testHashCode() {

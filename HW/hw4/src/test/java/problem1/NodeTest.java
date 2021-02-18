@@ -21,7 +21,6 @@ public class NodeTest {
   public void testToString() {
     String expected = "Node{courseCS5008: Algorithm', nextNode=null}";
     assertEquals(expected, node1.toString());
-    System.out.println(node1.toString());
   }
 
   @Test
@@ -43,6 +42,12 @@ public class NodeTest {
     assertFalse(node1.equals(node2));
   }
 
+
+  @Test
+  public void testAllEquals() {
+    Node some = new Node(new Course("Algorithm", "CS", 5008), null);
+    assertTrue(node1.equals(some));
+  }
 
   @Test
   public void testHashcode() {

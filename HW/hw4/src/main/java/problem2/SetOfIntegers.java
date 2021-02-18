@@ -50,8 +50,6 @@ public class SetOfIntegers implements Set {
    */
   @Override
   public Set add(Integer n) {
-    // Don't modify this.head and this.number
-    final SetOfIntegers newSet = new SetOfIntegers(this.head, this.numNodes);
     /**
      * If the integer n exists, return a new SetOfIntegers which has same head
      * and node number of this SetOfIntegers.
@@ -59,19 +57,25 @@ public class SetOfIntegers implements Set {
     if (this.contains(n)) {
       return this;
     }
-
+    /**
+     * If the Set head is null, create a newNode with integer n, return a new Set with
+     * the head newNode and numNodes 1.
+     */
     Node newNode = new Node(n, null);
-    if (newSet.head == null)
-      newSet.head = newNode;
-    else {
-      Node currNode = this.head;
-      while (currNode.getNextNode() != null) {
-        currNode = currNode.getNextNode();
-      }
-      currNode.setNextNode(newNode);
+    if (this.head == null) {
+      return new SetOfIntegers(newNode, this.numNodes + 1);
     }
-    newSet.numNodes++;
-    return newSet;
+    /**
+     * If Set head is not null, create a newHead having the same head with this,
+     * iterate newHead and add integer n to the back, then return a new Set.
+     */
+    Node newHead = new Node(this.head.getItem(), this.head.getNextNode());
+    Node currNode = newHead;
+    while (currNode.getNextNode() != null) {
+      currNode = currNode.getNextNode();
+    }
+    currNode.setNextNode(newNode);
+    return new SetOfIntegers(newHead, this.numNodes + 1);
   }
 
   /**
@@ -100,24 +104,33 @@ public class SetOfIntegers implements Set {
    */
   @Override
   public Set remove(Integer n) {
-    // Don't modify this.head and this.numNodes.
-    final SetOfIntegers newSet = new SetOfIntegers(this.head, this.numNodes);
     /**
      * If the integer n exists, return a new SetOfIntegers which has same head
      * and node number of this SetOfIntegers.
      */
     if (!this.contains(n)) {
-      return newSet;
+      return this;
     }
-    Node currNode = newSet.head;
-    Node preNode = currNode;
-    while(!currNode.getItem().equals(n)) {
-      preNode = currNode;
-      currNode = currNode.getNextNode();
+
+    /**
+     * if the integer n is in the head of Set, set the next Node after head to
+     * newHead, if the integer n is in the middle or tail of Set, iterate this
+     * Set and find the current Node before removed Node, then set newSetCurr's
+     * next node as current Node's next next node.
+     */
+    Node newHead = new Node(this.head.getItem(), this.head.getNextNode());
+    Node currNode = this.head;
+    Node newSetCurr = newHead;
+    if (currNode.getItem().equals(n)) {
+      newHead = currNode.getNextNode();
+    } else {
+      while (!currNode.getNextNode().getItem().equals(n)) {
+        newSetCurr = newSetCurr.getNextNode();
+        currNode = currNode.getNextNode();
+      }
+      newSetCurr.setNextNode(currNode.getNextNode().getNextNode());
     }
-    preNode.setNextNode(currNode.getNextNode());
-    newSet.numNodes--;
-    return newSet;
+    return new SetOfIntegers(newHead, this.numNodes - 1);
   }
 
   /**

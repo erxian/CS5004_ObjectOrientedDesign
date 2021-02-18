@@ -1,6 +1,7 @@
 package problem1;
 
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -28,6 +29,25 @@ public class CourseTest {
     assertFalse(cs5008.equals(null));
     assertFalse(cs5008.equals(""));
   }
+
+  @Test
+  public void prefixNotEqual() {
+    Course course = new Course("OOD", "EE", 5004);
+    assertFalse(cs5004.equals(course));
+  }
+
+  @Test
+  public void numberNotEqual() {
+    Course course = new Course("OOD", "CS", 5001);
+    assertFalse(cs5004.equals(course));
+  }
+
+  @Test
+  public void nameNotEqual() {
+    Course course = new Course("Java", "CS", 5004);
+    assertFalse(cs5004.equals(course));
+  }
+
 
   @Test
   public void testHashCode() {
