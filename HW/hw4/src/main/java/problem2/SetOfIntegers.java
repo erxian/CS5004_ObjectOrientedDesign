@@ -144,8 +144,8 @@ public class SetOfIntegers implements Set {
   }
 
   /**
-   * Check if two Set object is equal
-   * @param o the Set object waits to compare
+   * Check if two Set object is equal.
+   * @param o the Set object waits to compare.
    * @return true if equal, false otherwise.
    */
   @Override
@@ -157,7 +157,7 @@ public class SetOfIntegers implements Set {
         Objects.equals(head, that.head);
   }
   /**
-   * Check if two Set object has same hashCode
+   * Check if two Set object has same hashCode.
    * @return true if has, false otherwise.
    */
   @Override
