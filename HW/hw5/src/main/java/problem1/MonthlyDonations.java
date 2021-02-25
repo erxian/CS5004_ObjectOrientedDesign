@@ -45,7 +45,7 @@ public class MonthlyDonations extends Donations {
    * @return the donated months during this specific year.
    */
   private long monthsWithoutCancel(LocalDateTime start, LocalDateTime end) {
-    long donatedMonth= 0;
+    long donatedMonth = 0;
     if (this.getDonateTime().isAfter(start) && this.getDonateTime().isBefore(end)) {
       donatedMonth =  Period.between(this.getDonateTime().toLocalDate(),
         end.toLocalDate()).getMonths() + 1;
