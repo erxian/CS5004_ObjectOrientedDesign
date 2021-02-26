@@ -76,28 +76,28 @@ public class MonthlyDonations extends Donations {
      * cate6: end is before than donate create Date.
      */
 
-    // case5 & case6
+    /* case5 & case6 */
     if (this.getDonateTime().isAfter(end) || this.getCancelDate().isBefore(start)) {
       return 0;
     }
 
     long donatedMonth = 0;
-    // case1
+    /* case1 */
     if (this.getDonateTime().isBefore(start) && this.getCancelDate().isBefore(end)) {
       LocalDateTime tempDateTime = LocalDateTime.from(start);
       long months = tempDateTime.until(this.getCancelDate(), ChronoUnit.MONTHS ) + 1;
       donatedMonth = months;
-    // case2
+    /* case2 */
     } else if (this.getDonateTime().isAfter(start) && this.getCancelDate().isBefore(end)) {
       LocalDateTime tempDateTime = LocalDateTime.from(this.getDonateTime());
       long months = tempDateTime.until(this.getCancelDate(), ChronoUnit.MONTHS ) + 1;
       donatedMonth = months;
-    // case3
+    /* case3 */
     } else if (this.getDonateTime().isAfter(start) && this.getCancelDate().isAfter(end)) {
       LocalDateTime tempDateTime = LocalDateTime.from(this.getDonateTime());
       long months = tempDateTime.until(end, ChronoUnit.MONTHS ) + 1;
       donatedMonth = months;
-    // case4
+    /* case4 */
     } else {
       donatedMonth = allMonth;
     }

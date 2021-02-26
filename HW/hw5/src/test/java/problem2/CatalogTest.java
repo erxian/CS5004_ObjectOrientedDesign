@@ -44,12 +44,20 @@ public class CatalogTest {
   public void searchByKeywords() {
     Set<AbstractItem> result = catalog2.search("potter");
     assertTrue(result.contains(harryPotter));
+
+    Set<AbstractItem> result2 = catalog2.search("RING");
+    assertFalse(result2.contains(harryPotter));
   }
 
   @Test
   public void searchByAuthor() {
     Set<AbstractItem> result = catalog2.search(jk);
     assertTrue(result.contains(harryPotter));
+
+    Author ld = new Author("L.D.", "Rowling");
+    Book theRing = new Book(ld, "The Ring", 2000);
+    Set<AbstractItem> result2 = catalog2.search(ld);
+    assertFalse(result2.contains(theRing));
   }
 
   @Test
@@ -74,5 +82,10 @@ public class CatalogTest {
     Set<AbstractItem> result = catalog2.search(mem1);
     assertTrue(result.contains(littleTiger));
     assertTrue(result.contains(singerWu));
+
+    RecordingArtist langlang = new RecordingArtist("Lang", "lang");
+    AbstractItem bigG = new Music(langlang, "Piano", 2010);
+    Set<AbstractItem> result2 = catalog2.search(langlang);
+    assertFalse(result2.contains(bigG));
   }
 }

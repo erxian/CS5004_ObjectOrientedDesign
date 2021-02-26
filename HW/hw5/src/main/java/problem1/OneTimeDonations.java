@@ -19,10 +19,10 @@ public class OneTimeDonations extends Donations {
    */
   @Override
   public long getYearAmount(Integer year) {
-    if (this.getDonateTime().getYear() == year) {
-      return this.getAmount();
-    }
+    if (this.getDonateTime().getYear() != year) {
       return super.getYearAmount(year);
+    }
+    return this.getAmount();
   }
 
   @Override
