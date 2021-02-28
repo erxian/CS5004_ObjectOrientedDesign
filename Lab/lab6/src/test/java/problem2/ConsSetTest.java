@@ -41,11 +41,19 @@ public class ConsSetTest {
   }
 
   @Test
-  public void remove() {
+  public void removeRest() {
     ISet newSet = consSet.add(10);
-    assertTrue(newSet.contains(10));
-    ISet newSet2 = consSet.remove(10);
-    assertEquals(1, newSet2.size(), 0);
+    ISet newSet2 = newSet.remove(5);
+    ConsSet some = new ConsSet(10, new EmptySet());
+    assertTrue(newSet2.equals(some));
+  }
+
+  @Test
+  public void removeFirst() {
+    ISet newSet = consSet.add(10);
+    ISet newSet2 = newSet.remove(10);
+    ConsSet some = new ConsSet(5, new EmptySet());
+    assertTrue(newSet2.equals(some));
   }
 
   @Test

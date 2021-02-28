@@ -63,7 +63,6 @@ public class Cons implements List {
 
   }
 
-
   private void checkIndex(Integer index) throws InvalidCallException {
     if (index >= this.size() || index < 0) throw new InvalidCallException(
         "The index is out of bound!");
