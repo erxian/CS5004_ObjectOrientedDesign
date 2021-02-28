@@ -26,7 +26,7 @@ public class Cons implements List {
    * @return Value for property 'first'.
    */
   public Integer getFirst() {
-    return first;
+    return this.first;
   }
 
   /**
@@ -35,7 +35,7 @@ public class Cons implements List {
    * @return Value for property 'rest'.
    */
   public List getRest() {
-    return rest;
+    return this.rest;
   }
 
   @Override

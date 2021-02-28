@@ -39,7 +39,7 @@ public class ConsSet implements ISet {
    */
   @Override
   public Boolean isEmpty() {
-    return null;
+    return false;
   }
 
   /**
@@ -117,6 +117,9 @@ public class ConsSet implements ISet {
 
   @Override
   public String toString() {
-    return super.toString();
+    return "Cons{"
+        + "first=" + first
+        + ", rest=" + rest
+        + '}';
   }
 }

@@ -15,7 +15,7 @@ public interface List {
 
   /**
    * Returns true if empty and false otherwise
-   *
+   * @return a boolean, true if List is empty, false otherwise.
    */
   Boolean isEmpty();
 

@@ -69,6 +69,6 @@ public class EmptySet implements ISet {
 
   @Override
   public String toString() {
-    return super.toString();
+    return "EmptySet{}";
   }
 }
