@@ -61,5 +61,4 @@ public class EmptyPriorityQueue implements PriorityQueue {
   public String toString() {
     return "EmptyPriorityQueue{}";
   }
-
 }

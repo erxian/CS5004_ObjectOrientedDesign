@@ -1,5 +1,7 @@
 package problem1;
 
+import java.util.Objects;
+
 public class ConPriorityQueue implements PriorityQueue {
   private Element first;
   private PriorityQueue rest;
@@ -56,7 +58,35 @@ public class ConPriorityQueue implements PriorityQueue {
     return this.rest;
   }
 
-  /**
+  @Override
+  public int hashCode() {
+    int result = 31 * this.first.getPriority();
+    result += Objects.hashCode(this.first);
+    return result + this.rest.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    ConPriorityQueue conPriorityQueue = (ConPriorityQueue) o;
+    if (!this.first.equals(conPriorityQueue.first)) return false;
+    return this.rest.equals(conPriorityQueue.pop());
+  }
+
+  @Override
+  public String toString() {
+    return "ConPriorityQueue{"
+        + "first=" + this.first
+        + ", rest=" + this.rest
+        + '}';
+  }
+
+/**
   public static void main(String args[]) {
     EmptyPriorityQueue emptyPriorityQueue = new EmptyPriorityQueue();
     PriorityQueue newPQ = emptyPriorityQueue.add(5, "aaa");

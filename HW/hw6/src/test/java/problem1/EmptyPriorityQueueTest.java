@@ -6,20 +6,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class EmptyPriorityQueueTest {
-  private EmptyPriorityQueue emptyPriorityQueue;
+  private PriorityQueue emptyPriorityQueue;
 
   @Before
   public void setUp() throws Exception {
-    emptyPriorityQueue = new EmptyPriorityQueue();
+    emptyPriorityQueue = PriorityQueue.createEmpty();
   }
 
   @Test
   public void isEmpty() {
+    assertTrue(emptyPriorityQueue.isEmpty());
   }
 
   @Test
   public void add() {
-    emptyPriorityQueue.add(2, "kitty");
+    PriorityQueue that = emptyPriorityQueue.add(2, "kitty");
+    assertEquals("kitty", that.peek());
   }
 
   @Test(expected = InvalidCallException.class)
@@ -27,34 +29,28 @@ public class EmptyPriorityQueueTest {
     emptyPriorityQueue.peek();
   }
 
-  @Test
-  public void testPeek() {
-    PriorityQueue newPQ = emptyPriorityQueue.add(2, "kitty");
-    assertEquals("kitty", newPQ.peek());
-    newPQ = newPQ.add(7, "dog");
-    assertEquals("dog", newPQ.peek());
-    newPQ = newPQ.add(5, "deer");
-    assertEquals("dog", newPQ.peek());
-    newPQ = newPQ.add(10, "woof");
-    assertEquals("woof", newPQ.peek());
-    newPQ = newPQ.add(10, "chicken");
-    assertEquals("woof", newPQ.peek());
-  }
-
-
-  @Test
+  @Test(expected = InvalidCallException.class)
   public void pop() {
+    emptyPriorityQueue.pop();
   }
 
   @Test
   public void testHashCode() {
+    assertTrue(emptyPriorityQueue.hashCode() == 31);
   }
 
   @Test
   public void testEquals() {
+    assertTrue(emptyPriorityQueue.equals(emptyPriorityQueue));
+    assertFalse(emptyPriorityQueue.equals(null));
+    assertFalse(emptyPriorityQueue.equals(""));
+    EmptyPriorityQueue that = new EmptyPriorityQueue();
+    assertTrue(emptyPriorityQueue.equals(that));
   }
 
   @Test
   public void testToString() {
+    String expected = "EmptyPriorityQueue{}";
+    assertEquals(expected, emptyPriorityQueue.toString());
   }
 }
