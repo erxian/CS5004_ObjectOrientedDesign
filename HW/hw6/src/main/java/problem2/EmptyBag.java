@@ -1,5 +1,7 @@
 package problem2;
-
+/**
+ * EmptyBag Class is an empty BagOfWords.
+ */
 public class EmptyBag implements BagOfWords {
 
   /**
@@ -60,15 +62,4 @@ public class EmptyBag implements BagOfWords {
   public String toString() {
     return "EmptyBag{}";
   }
-
-  /**
-  @Override
-  public String peek() {
-    throw new IllegalArgumentException("Called last() on empty!");
-  }
-
-  @Override
-  public BagOfWords remove() {
-    throw new IllegalArgumentException("Called last() on empty!");
-  }*/
 }

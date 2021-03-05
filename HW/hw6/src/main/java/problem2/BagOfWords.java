@@ -45,11 +45,4 @@ public interface BagOfWords {
    * @return ture if contains word s false otherwise.
    */
   Boolean contains(String s);
-
-  /**
-  String peek();
-
-  BagOfWords remove();
-   */
-
 }

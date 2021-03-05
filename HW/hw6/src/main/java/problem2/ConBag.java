@@ -2,10 +2,19 @@ package problem2;
 
 import java.util.Objects;
 
+/**
+ * ConBag Class holding String elements, can contains duplicates,
+ * elements have no order.
+ */
 public class ConBag implements BagOfWords {
   private String first;
   private BagOfWords rest;
 
+  /**
+   * Constructor for ConBag
+   * @param first first element in ConBag
+   * @param rest the rest elements in Conbag
+   */
   public ConBag(String first, BagOfWords rest) {
     this.first = first;
     this.rest = rest;
@@ -32,7 +41,11 @@ public class ConBag implements BagOfWords {
   }
 
   /**
-   * Add a given word s to BagOfWords.
+   * Add a given word s to BagOfWords according to its alphabetical
+   * order, if given word has higher alphabetical than first, it will
+   * be added as the new first. If lower, compare to the rest. If given
+   * word has duplicates in BagOfWords, it will be added to the tail of
+   * the exist duplicates.
    *
    * @param s the given word
    * @return a new BagOfWords contains given word s
@@ -65,6 +78,13 @@ public class ConBag implements BagOfWords {
     return result + this.rest.hashCode();
   }
 
+  /**
+   * Every element in ConBag are sorted already, using recursion to
+   * compare elements one by one.
+   * @param o The Object
+   * @return true if two ConBag have same elements(regardless oder),
+   * false otherwise.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -87,55 +107,4 @@ public class ConBag implements BagOfWords {
         + ", rest=" + this.rest
         + '}';
   }
-
-  /**
-  @Override
-  public String peek() {
-    return this.first;
-  }
-
-
-  @Override
-  public BagOfWords remove() {
-    return this.rest;
-  }
-
-  public static void main(String args[]) {
-    BagOfWords bagOfWords = BagOfWords.emptyBagOfWords();
-    BagOfWords newBag = bagOfWords.add("cat");
-    newBag = newBag.add("dog");
-    newBag = newBag.add("cat");
-    newBag = newBag.add("woof");
-    newBag = newBag.add("dog");
-    newBag = newBag.add("cat");
-    newBag = newBag.add("chicken");
-    newBag = newBag.add("woof");
-
-
-    BagOfWords another = BagOfWords.emptyBagOfWords();
-    BagOfWords anNew = another.add("chicken");
-    anNew = anNew.add("cat");
-    anNew = anNew.add("woof");
-    anNew = anNew.add("dog");
-    anNew = anNew.add("dog");
-    anNew = anNew.add("cat");
-    anNew = anNew.add("woof");
-    //anNew = anNew.add("ele");
-
-
-    while(!newBag.isEmpty()) {
-      System.out.printf("%s ", newBag.peek());
-      newBag = newBag.remove();
-    }
-
-    System.out.printf("\n");
-
-    while(!anNew.isEmpty()) {
-      System.out.printf("%s ", anNew.peek());
-      anNew = anNew.remove();
-    }
-
-    System.out.printf("\n");
-    System.out.printf("%b", newBag.equals(anNew));
-  }**/
 }
