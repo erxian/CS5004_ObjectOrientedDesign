@@ -21,7 +21,9 @@ public class ConPriorityQueue implements PriorityQueue {
   }
 
   /**
-   * Add the given element to priority queue.
+   * Add the given element to priority queue, sort the PQ according to
+   * elements' priority form high to low. first element is always the
+   * highest priority element.
    *
    * @param priority the priority
    * @param value    the value
@@ -40,6 +42,11 @@ public class ConPriorityQueue implements PriorityQueue {
   /**
    * Return the value in the PQ that has the highest priority.
    *
+   * elements having same priority, the one added first will be chose.
+   * e.g. element1 = (5, "cat"), element2 = (5, "dog), if element1 added
+   * first, element2 added after element1. Then peek() will return the
+   * value of element1: "cat".
+   *
    * @return the value in the PQ that has the highest priority.
    */
   @Override
@@ -50,6 +57,10 @@ public class ConPriorityQueue implements PriorityQueue {
 
   /**
    * remove the element with the highest priority.
+   *
+   * elements having same priority, the one added first will be removed first.
+   * e.g. element1 = (5, "cat"), element2 = (5, "dog), if element1 added
+   * first, element2 added after element1. remove() method will remove element1.
    *
    * @return a copy of the PQ without the element with the highest priority
    */
@@ -65,6 +76,11 @@ public class ConPriorityQueue implements PriorityQueue {
     return result + this.rest.hashCode();
   }
 
+  /**
+   * In this implement, PQ is sorted already when adding,
+   * so only when two PQ have the same elements with same oder,
+   * they're equals.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -85,20 +101,4 @@ public class ConPriorityQueue implements PriorityQueue {
         + ", rest=" + this.rest
         + '}';
   }
-
-/**
-  public static void main(String args[]) {
-    EmptyPriorityQueue emptyPriorityQueue = new EmptyPriorityQueue();
-    PriorityQueue newPQ = emptyPriorityQueue.add(5, "aaa");
-    newPQ = newPQ.add(2, "bbb");
-    newPQ = newPQ.add(10, "ccc");
-    newPQ = newPQ.add(6, "ddd");
-    newPQ = newPQ.add(3, "eee");
-    newPQ = newPQ.add(6, "fff");
-
-    while(!newPQ.isEmpty()) {
-      System.out.printf("%s ", newPQ.peek());
-      newPQ = newPQ.pop();
-    }
-  }**/
 }
