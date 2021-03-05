@@ -44,7 +44,7 @@ public class EmptyPriorityQueueTest {
     assertTrue(emptyPriorityQueue.equals(emptyPriorityQueue));
     assertFalse(emptyPriorityQueue.equals(null));
     assertFalse(emptyPriorityQueue.equals(""));
-    EmptyPriorityQueue that = new EmptyPriorityQueue();
+    PriorityQueue that = PriorityQueue.createEmpty();;
     assertTrue(emptyPriorityQueue.equals(that));
   }
 

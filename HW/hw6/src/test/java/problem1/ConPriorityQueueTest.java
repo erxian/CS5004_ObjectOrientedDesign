@@ -7,12 +7,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ConPriorityQueueTest {
-   private ConPriorityQueue conPriorityQueue;
+   private PriorityQueue conPriorityQueue;
 
   @Before
   public void setUp() throws Exception {
     conPriorityQueue = new ConPriorityQueue(new Element(5, "cat"),
-        new EmptyPriorityQueue());
+        PriorityQueue.createEmpty());
   }
 
   @Test
@@ -70,8 +70,8 @@ public class ConPriorityQueueTest {
 
   @Test
   public void testHashCode() {
-    ConPriorityQueue that = new ConPriorityQueue(new Element(5, "cat"),
-        new EmptyPriorityQueue());
+    PriorityQueue that = new ConPriorityQueue(new Element(5, "cat"),
+        PriorityQueue.createEmpty());
     assertTrue(conPriorityQueue.hashCode() == that.hashCode());
   }
 
@@ -80,27 +80,27 @@ public class ConPriorityQueueTest {
     assertTrue(conPriorityQueue.equals(conPriorityQueue));
     assertFalse(conPriorityQueue.equals(null));
     assertFalse(conPriorityQueue.equals(""));
-    ConPriorityQueue that = new ConPriorityQueue(new Element(5, "cat"),
-        new EmptyPriorityQueue());
+    PriorityQueue that = new ConPriorityQueue(new Element(5, "cat"),
+        PriorityQueue.createEmpty());
     assertTrue(conPriorityQueue.equals(that));
   }
 
   @Test
   public void testFirstNotEquals() {
-    ConPriorityQueue that = new ConPriorityQueue(new Element(2, "cat"),
-        new EmptyPriorityQueue());
+    PriorityQueue that = new ConPriorityQueue(new Element(2, "cat"),
+        PriorityQueue.createEmpty());
     assertFalse(conPriorityQueue.equals(that));
 
-    ConPriorityQueue some = new ConPriorityQueue(new Element(5, "dog"),
-        new EmptyPriorityQueue());
+    PriorityQueue some = new ConPriorityQueue(new Element(5, "dog"),
+        PriorityQueue.createEmpty());
     assertFalse(conPriorityQueue.equals(some));
   }
 
 
   @Test
   public void testRestNotEquals() {
-    ConPriorityQueue that = new ConPriorityQueue(new Element(2, "cat"),
-        new EmptyPriorityQueue());
+    PriorityQueue that = new ConPriorityQueue(new Element(2, "cat"),
+        PriorityQueue.createEmpty());
 
     PriorityQueue newThat = that.add(1, "woof");
 

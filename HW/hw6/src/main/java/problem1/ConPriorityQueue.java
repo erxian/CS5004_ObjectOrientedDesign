@@ -79,7 +79,8 @@ public class ConPriorityQueue implements PriorityQueue {
   /**
    * In this implement, PQ is sorted already when adding,
    * so only when two PQ have the same elements with same oder,
-   * they're equals.
+   * they're equals. e.g. {[5, "cat"], [5, "dog"], [2, "woof"]}
+   * is not equal to {[5, "dog"], [5, "cat"], [2, "woof"]}
    */
   @Override
   public boolean equals(Object o) {
