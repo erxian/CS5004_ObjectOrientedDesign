@@ -22,8 +22,8 @@ public class ConPriorityQueueTest {
 
   @Test
   public void add() {
-    assertEquals("cat", conPriorityQueue.peek());
     PriorityQueue newPQ = conPriorityQueue.add(7, "dog");
+    assertEquals("cat", conPriorityQueue.peek());
     assertEquals("dog", newPQ.peek());
   }
 
@@ -31,12 +31,16 @@ public class ConPriorityQueueTest {
   public void peek() {
     PriorityQueue newPQ = conPriorityQueue.add(2, "dog");
     assertEquals("cat", newPQ.peek());
+    // add bird, bird is first
     newPQ = newPQ.add(7, "bird");
     assertEquals("bird", newPQ.peek());
+    // add deer, bird is still first
     newPQ = newPQ.add(6, "deer");
     assertEquals("bird", newPQ.peek());
+    // add woof, now woof is first
     newPQ = newPQ.add(10, "woof");
     assertEquals("woof", newPQ.peek());
+    // add chicken, woof is first
     newPQ = newPQ.add(10, "chicken");
     assertEquals("woof", newPQ.peek());
   }
@@ -54,18 +58,20 @@ public class ConPriorityQueueTest {
     newPQ = newPQ.add(10, "chicken");
     assertEquals("woof", newPQ.peek());
 
-    newPQ = newPQ.pop();
+    assertEquals("woof", newPQ.peek());
+    newPQ = newPQ.pop(); // remove woof
     assertEquals("chicken", newPQ.peek());
-    newPQ = newPQ.pop();
+    newPQ = newPQ.pop(); // remove chicken
     assertEquals("bird", newPQ.peek());
-    newPQ = newPQ.pop();
+    newPQ = newPQ.pop();  // remove bird
     assertEquals("deer", newPQ.peek());
-    newPQ = newPQ.pop();
+    newPQ = newPQ.pop(); // remove deer
     assertEquals("cat", newPQ.peek());
-    newPQ = newPQ.pop();
+    newPQ = newPQ.pop(); //remove cat
     assertEquals("dog", newPQ.peek());
-    newPQ = newPQ.pop();  // EmptyPriorityQueue
+    newPQ = newPQ.pop();  // remove dog, now newPQ is EmptyPriorityQueue
 
+    assertEquals("cat", conPriorityQueue.peek());
   }
 
   @Test
