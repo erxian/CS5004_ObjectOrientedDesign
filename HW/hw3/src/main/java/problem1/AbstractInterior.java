@@ -16,7 +16,7 @@ public abstract class AbstractInterior extends AbstractNonSpecialist {
    * @param preServiceNum   The number of services previously carried out at the address.
    * @param petsNum  The number of pets living at the address.
    */
-  public AbstractInterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
+  protected AbstractInterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
       Integer preServiceNum, Integer petsNum) {
     super(propertyAddress, propertySize, isMonthly, preServiceNum);
     this.petsNum = petsNum;

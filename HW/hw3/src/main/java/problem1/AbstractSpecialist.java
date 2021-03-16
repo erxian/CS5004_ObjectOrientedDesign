@@ -17,7 +17,7 @@ public abstract class AbstractSpecialist extends AbstractPropertyService impleme
    * @param licensedEmployeeNum The number of licensed employees required to complete the work
    * @throws InvalidPropertyServiceException if require over 4 employees throw the exception.
    */
-  public AbstractSpecialist(String propertyAddress, PropertySize propertySize, boolean isMonthly,
+  protected AbstractSpecialist(String propertyAddress, PropertySize propertySize, boolean isMonthly,
       Integer preServiceNum, boolean isComplex, Integer licensedEmployeeNum)
       throws InvalidPropertyServiceException {
     super(propertyAddress, propertySize, isMonthly, preServiceNum);

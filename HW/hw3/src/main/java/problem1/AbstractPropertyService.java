@@ -18,7 +18,7 @@ public abstract class AbstractPropertyService implements PropertyService {
    * @param isMonthly Whether or not the service is carried out monthly.
    * @param preServiceNum The number of services previously carried out at the address.
    */
-  public AbstractPropertyService(String propertyAddress, PropertySize propertySize,
+  protected AbstractPropertyService(String propertyAddress, PropertySize propertySize,
       boolean isMonthly, Integer preServiceNum) {
     this.propertyAddress = propertyAddress;
     this.propertySize = propertySize;

@@ -11,7 +11,7 @@ public abstract class AbstractExterior extends AbstractNonSpecialist {
    * @param isMonthly       Whether or not the service is carried out monthly.
    * @param preServiceNum   The number of services previously carried out at the address.
    */
-  public AbstractExterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
+  protected AbstractExterior(String propertyAddress, PropertySize propertySize, boolean isMonthly,
       Integer preServiceNum) {
     super(propertyAddress, propertySize, isMonthly, preServiceNum);
   }

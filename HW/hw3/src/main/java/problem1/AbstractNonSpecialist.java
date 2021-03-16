@@ -16,7 +16,7 @@ public abstract class AbstractNonSpecialist extends AbstractPropertyService impl
    * @param isMonthly       Whether or not the service is carried out monthly.
    * @param preServiceNum   The number of services previously carried out at the address.
    */
-  public AbstractNonSpecialist(String propertyAddress, PropertySize propertySize, boolean isMonthly,
+  protected AbstractNonSpecialist(String propertyAddress, PropertySize propertySize, boolean isMonthly,
       Integer preServiceNum) {
     super(propertyAddress, propertySize, isMonthly, preServiceNum);
   }
