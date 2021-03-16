@@ -10,17 +10,12 @@ public class RoomTest {
 
   @Before
   public void setUp() throws Exception {
-    single = new Room(1, 80.00f, 0);
-  }
-
-  @Test (expected = IllegalArgumentException.class)
-  public void invalidSetUp() throws IllegalArgumentException {
-    Room invalidGuestNum = new Room(2, 76.55f, 1);
+    single = new Room(1, 80.00f);
   }
 
   @Test (expected = IllegalArgumentException.class)
   public void invalidPrice() throws IllegalArgumentException {
-    Room invalidPrice = new Room(4, -20.00f, 0);
+    Room invalidPrice = new Room(4, -20.00f);
   }
 
   @Test
@@ -39,6 +34,13 @@ public class RoomTest {
   }
 
   @Test
+  public void isNotAvailable() throws UnavailableException, InvalidGuestNumException {
+    single.bookRoom(1);
+    assertEquals(false, single.isAvailable());
+  }
+
+
+  @Test
   public void bookRoom() throws UnavailableException, InvalidGuestNumException {
     single.bookRoom(1);
     assertEquals(1, single.getGuestNum());
@@ -47,20 +49,20 @@ public class RoomTest {
   @Test (expected = UnavailableException.class)
   public void unavailableRoom() throws UnavailableException, InvalidGuestNumException {
     single.bookRoom(1);
-    Room room3 =  new Room(2, 80.00f, 0);
+    Room room3 =  new Room(2, 80.00f);
     room3.bookRoom(1);
     room3.bookRoom(1);
   }
 
   @Test (expected = InvalidGuestNumException.class)
   public void overMaxOccupancy() throws UnavailableException, InvalidGuestNumException {
-    Room room1 =  new Room(2, 80.00f, 0);
+    Room room1 =  new Room(2, 80.00f);
     room1.bookRoom(5);
   }
 
   @Test (expected = InvalidGuestNumException.class)
   public void belowMinGuestNum() throws UnavailableException, InvalidGuestNumException {
-    Room room2 =  new Room(2, 80.00f, 0);
+    Room room2 =  new Room(2, 80.00f);
     room2.bookRoom(0);
   }
 }

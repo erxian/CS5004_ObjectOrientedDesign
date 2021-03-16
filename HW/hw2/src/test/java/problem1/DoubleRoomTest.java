@@ -10,7 +10,7 @@ public class DoubleRoomTest {
 
   @Before
   public void setUp() throws Exception {
-    twoBed = new DoubleRoom(99.00f, 0);
+    twoBed = new DoubleRoom(99.00f);
   }
 
   @Test

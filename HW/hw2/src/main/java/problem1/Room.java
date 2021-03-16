@@ -4,28 +4,20 @@ package problem1;
  * A Room class representing a hotel room with maxOccupancy, price and guest number.
  */
 public class Room {
-
-  private static int defaultNum = 0;
   private int maxOccupancy;
   private float price;
-  private int guestNum;
-
+  private int guestNum = 0;
   /**
    * Constructor for the Room class.
    *
    * @param maxOccupancy The maximum number of people that can stay in the room
    * @param price        The cost of a single night’s stay. Must be greater than 0.
-   * @param guestNum     - The number of guests currently booked into the room. This value should be
-   *                     0 when the room is first created in the system
    */
-  public Room(int maxOccupancy, float price, int guestNum) {
-    this.maxOccupancy = maxOccupancy;
 
+  public Room(int maxOccupancy, float price) {
+    this.maxOccupancy = maxOccupancy;
     this.isValidPrice(price);
     this.price = price;
-
-    this.validateDefault(guestNum);
-    this.guestNum = guestNum;
     }
 
   /**
@@ -57,22 +49,11 @@ public class Room {
 
   /**
    * Checks the room price when create a new room, should be greater than 0.
-   * @param price The cost of a single night’s stay
    */
-  private void isValidPrice(float price) {
+  private void isValidPrice(float price){
     int minPrice = 0;
     if (price <= minPrice)
       throw new IllegalArgumentException("Price must be greater than 0");
-  }
-
-  /**
-   * Checks if the guests number is 0
-   * @param guestNum The number of guests currently booked into the room.
-   * This value should be 0 when the room is first created in the system
-   */
-  private void validateDefault(int guestNum) {
-    if (guestNum != defaultNum)
-      throw new IllegalArgumentException("guest number must be 0");
   }
 
   /**
@@ -82,7 +63,7 @@ public class Room {
    * @param guestNum The number of guests book the room
    */
   private void isValidateGuestNum(int guestNum) throws InvalidGuestNumException {
-    if (guestNum <= defaultNum || guestNum > this.getMaxOccupancy())
+    if (guestNum <= 0 || guestNum > this.getMaxOccupancy())
       throw new InvalidGuestNumException();
   }
 
@@ -93,8 +74,8 @@ public class Room {
    * @return true if the room is available, false otherwise.
    */
   public boolean isAvailable() throws UnavailableException {
-    if (this.getGuestNum() > defaultNum)
-      throw new UnavailableException();
+    if (this.getGuestNum() > 0)
+      return false;
     return true;
   }
 

@@ -10,7 +10,7 @@ public class FamilyRoomTest {
 
   @Before
   public void setUp() throws Exception {
-    family = new FamilyRoom(200.01f, 0);
+    family = new FamilyRoom(200.01f);
   }
 
   @Test
