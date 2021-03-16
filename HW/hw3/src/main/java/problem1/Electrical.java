@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Electrical extends AbstractSpecialist {
   static private Integer  permittingFee  = 50;
+
   /**
    * Constructor for the AbstractPropertyService class.
    *
@@ -19,16 +20,16 @@ public class Electrical extends AbstractSpecialist {
       Integer preServiceNum, boolean isComplex, Integer licensedEmployeeNum)
       throws InvalidPropertyServiceException {
     super(propertyAddress, propertySize, isMonthly, preServiceNum, isComplex, licensedEmployeeNum);
+    this.checkMinRequirement(isComplex, licensedEmployeeNum);
   }
 
-  @Override
   /**
-   * Set min requirement of employee number.
+   * Check min requirement of employee number.
    * @param isComplex if the service is complex.
    * @param licensedEmployeeNum the licensed employee numbers.
    * @throws InvalidPropertyServiceException if require over 4 employees throw the exception.
    */
-  public void setMinRequirement(boolean isComplex, Integer licensedEmployeeNum)
+  public void checkMinRequirement(boolean isComplex, Integer licensedEmployeeNum)
       throws InvalidPropertyServiceException {
     super.setMinRequirement(isComplex, licensedEmployeeNum);
     Integer maxNum = 4;

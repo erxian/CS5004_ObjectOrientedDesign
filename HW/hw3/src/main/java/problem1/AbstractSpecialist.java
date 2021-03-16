@@ -47,8 +47,7 @@ public abstract class AbstractSpecialist extends AbstractPropertyService impleme
    * @param licensedEmployeeNum the licensed employee numbers.
    * @throws InvalidPropertyServiceException not sure why child class affect parent class
    */
-  public void setMinRequirement(boolean isComplex, Integer licensedEmployeeNum)
-      throws InvalidPropertyServiceException {
+  public void setMinRequirement(boolean isComplex, Integer licensedEmployeeNum) {
     Integer minNum = 1;
     Integer complexMinNum = 2;
     Integer complexLargeMinNum = 3;
