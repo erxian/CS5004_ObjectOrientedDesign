@@ -6,14 +6,6 @@ public class EmployeeManagementSystem implements IEmployeeManagementSystem {
   protected static final Double SALARY_BAR = 100000.0;
 
   /**
-   * Creates an empty CourseCatalog.
-   * @return An empty CourseCatalog.
-   */
-  public static EmployeeManagementSystem createEmpty() {
-    return new EmployeeManagementSystem();
-  }
-
-  /**
    * check if the EmployeeManagementSystem is empty.
    *
    * @return the boolean
@@ -107,7 +99,7 @@ public class EmployeeManagementSystem implements IEmployeeManagementSystem {
    */
   @Override
   public IEmployeeManagementSystem findByJoinedYear(Integer year) {
-    IEmployeeManagementSystem sublist = createEmpty();
+    IEmployeeManagementSystem sublist = IEmployeeManagementSystem.createEmpty();
     Node currNode = this.head;
     while (currNode != null) {
       if (currNode.getEmployee().getYearJoinedCompany().equals(year)) {
@@ -126,7 +118,7 @@ public class EmployeeManagementSystem implements IEmployeeManagementSystem {
    */
   @Override
   public IEmployeeManagementSystem findBySalary() {
-    IEmployeeManagementSystem sublist = createEmpty();
+    IEmployeeManagementSystem sublist = IEmployeeManagementSystem.createEmpty();
     Node currNode = this.head;
     while (currNode != null) {
       if (currNode.getEmployee().getAnnualEarnings() >= SALARY_BAR) {
@@ -146,7 +138,7 @@ public class EmployeeManagementSystem implements IEmployeeManagementSystem {
    */
   @Override
   public IEmployeeManagementSystem findByPromotedYear(Integer year) {
-    IEmployeeManagementSystem sublist = createEmpty();
+    IEmployeeManagementSystem sublist = IEmployeeManagementSystem.createEmpty();
     Node currNode = this.head;
     while (currNode != null) {
       if (currNode.getEmployee().getYearLastPromoted().equals(year)) {

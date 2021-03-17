@@ -4,6 +4,13 @@ package finalExam.p2;
  * The interface Employee management system.
  */
 public interface IEmployeeManagementSystem {
+  /**
+   * Creates an empty EmployeeManagementSystem.
+   * @return An empty EmployeeManagementSystem.
+   */
+  static EmployeeManagementSystem createEmpty() {
+    return new EmployeeManagementSystem();
+  }
 
   /**
    * check if the EmployeeManagementSystem is empty.

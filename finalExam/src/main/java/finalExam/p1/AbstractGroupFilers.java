@@ -37,13 +37,6 @@ public abstract class AbstractGroupFilers extends AbstractTaxFiler {
     this.dependantExpenses = dependantExpenses;
   }
 
-  protected Double checkStudentDiscount() {
-    if (this.lastYearIncome <= INCOME_HIGH_BAR && this.studentFees >= EDUCATION_EXPENSES) {
-      return EDUCATION_DEDUCTION;
-    }
-    return 0.0;
-  }
-
   protected Double checkChildcareDeduction() {
     if (this.lastYearIncome <= INCOME_HIGH_BAR && this.childExpenses >= CHILD_EXPENSES) {
       return CHILD_DEDUCTION;
@@ -66,32 +59,38 @@ public abstract class AbstractGroupFilers extends AbstractTaxFiler {
     return savingDeduction;
   }
 
+  protected Double checkStudentDiscount() {
+    if (this.lastYearIncome <= INCOME_HIGH_BAR && this.studentFees >= EDUCATION_EXPENSES) {
+      return EDUCATION_DEDUCTION;
+    }
+    return 0.0;
+  }
+
+  @Override
   protected Double calculateTaxableIncome() {
-    Double basicTaxableIncome = this.lastYearIncome - this.totalIncomeTax;
-    Double donationDeduction = this.donations;
+
     Double savingDeduction = this.checkSavingDeduction();
     Double studentFeesDeduction = this.checkStudentDiscount();
-    Double mortgageDeduction = super.checkMortgageDiscount();
     Double childDeduction = this.checkChildcareDeduction();
 
-    Double TaxableIncome = basicTaxableIncome - donationDeduction - savingDeduction
-        - studentFeesDeduction - mortgageDeduction - childDeduction;
+    Double TaxableIncome = super.calculateTaxableIncome() - savingDeduction
+        - studentFeesDeduction - childDeduction;
 
     return TaxableIncome;
   }
 
-
+  @Override
   public Double calculateTax() {
     Double TaxableIncome = this.calculateTaxableIncome();
-    if (TaxableIncome < TAXABLE_LOW_BAR) {
+    if (TaxableIncome <= TAXABLE_LOW_BAR) {
       return TaxableIncome * TAX_LOW_RATE - this.checkCareCredit();
     }
 
     if (TaxableIncome >= TAXABLE_HIGH_BAR) {
       return TaxableIncome * TAX_HIGH_RATE - this.checkCareCredit();
     }
-    // No description about the tax rate when TaxableIncome between 90000 and 185000
-    // set default with TAX_LOW_RATE
+    // Lack of description about the tax rate when TaxableIncome between
+    // $90000 and $185000, so set default with TAX_LOW_RATE
     return TaxableIncome * TAX_LOW_RATE - this.checkCareCredit();
   }
 }

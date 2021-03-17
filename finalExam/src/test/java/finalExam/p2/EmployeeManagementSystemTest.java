@@ -23,7 +23,7 @@ public class EmployeeManagementSystemTest {
             "chris@gmail.com"), LocalDate.now(), "1066", 2017,
         "software engineer", 2020, 90000.0);
 
-    baidu = EmployeeManagementSystem.createEmpty();
+    baidu = IEmployeeManagementSystem.createEmpty();
   }
 
   @Test

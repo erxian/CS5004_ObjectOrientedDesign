@@ -34,9 +34,23 @@ public abstract class AbstractTaxFiler implements ITaxFiler {
 
   protected Double checkMortgageDiscount() {
     if (this.lastYearIncome < MORTGAGE_BAR &&
-        (this.mortgageInterest + this.propertyTaxes) > MORTGAGE_INTEREST) {
+        (this.mortgageInterest + this.propertyTaxes) >= MORTGAGE_INTEREST) {
       return MORTGAGE_DEDUCTION;
     }
     return 0.0;
+  }
+
+  protected Double getBasicTaxableIncome() {
+    Double basicTaxableIncome = this.lastYearIncome - this.totalIncomeTax;
+    return basicTaxableIncome;
+  }
+
+  protected Double calculateTaxableIncome() {
+    Double basicTaxableIncome = this.getBasicTaxableIncome();
+    Double donationDeduction = this.donations;
+    Double mortgageDeduction = this.checkMortgageDiscount();
+
+    Double TaxableIncome = basicTaxableIncome - donationDeduction - mortgageDeduction;
+    return TaxableIncome;
   }
 }

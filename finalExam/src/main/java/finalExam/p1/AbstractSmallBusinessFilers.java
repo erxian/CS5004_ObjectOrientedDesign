@@ -1,6 +1,6 @@
 package finalExam.p1;
 
-public class SmallBusinessFilers extends AbstractTaxFiler {
+public abstract class AbstractSmallBusinessFilers extends AbstractTaxFiler {
   protected Integer employeeNum;
   protected Double employeeExpenses;
   protected Double businessExpenses;
@@ -8,7 +8,7 @@ public class SmallBusinessFilers extends AbstractTaxFiler {
   protected static final double TAX_RATE = 0.15;
   protected static final double EMPLOYEE_CREDIT = 2500.0;
 
-  public SmallBusinessFilers(String taxID, ContactInfo contactInfo, Double lastYearIncome,
+  public AbstractSmallBusinessFilers(String taxID, ContactInfo contactInfo, Double lastYearIncome,
       Double totalIncomeTax, Double mortgageInterest, Double propertyTaxes,
       Double studentFees, Double retirementSaving, Double healthSaving, Double donations,
       Integer employeeNum, Double employeeExpenses, Double businessExpenses) {
@@ -19,7 +19,7 @@ public class SmallBusinessFilers extends AbstractTaxFiler {
     this.businessExpenses = businessExpenses;
   }
 
-  private Double calculateTaxableIncome() {
+  protected Double taxableIncome() {
     Double basicTaxableIncome = this.lastYearIncome - this.totalIncomeTax;
     Double employeeCredit = this.employeeNum * EMPLOYEE_CREDIT;
 
@@ -31,6 +31,6 @@ public class SmallBusinessFilers extends AbstractTaxFiler {
 
   @Override
   public Double calculateTax() {
-    return this.calculateTaxableIncome() * TAX_RATE;
+    return this.taxableIncome() * TAX_RATE;
   }
 }

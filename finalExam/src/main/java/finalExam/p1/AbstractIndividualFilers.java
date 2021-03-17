@@ -24,15 +24,14 @@ public abstract class AbstractIndividualFilers extends AbstractTaxFiler {
     return 0.0;
   }
 
+  @Override
   protected Double calculateTaxableIncome() {
-    Double basicTaxableIncome = this.lastYearIncome - this.totalIncomeTax;
-    Double donationDeduction = this.donations;
     Double savingDeduction = (this.retirementSaving + this.healthSaving) * SAVING_DISCOUNT;
     Double studentFeesDeduction = this.checkStudentDiscount();
-    Double mortgageDeduction = super.checkMortgageDiscount();
 
-    Double TaxableIncome = basicTaxableIncome - donationDeduction - savingDeduction
-        - studentFeesDeduction - mortgageDeduction;
+    Double TaxableIncome = super.calculateTaxableIncome() - savingDeduction -
+        studentFeesDeduction;
+
     return TaxableIncome;
   }
 
